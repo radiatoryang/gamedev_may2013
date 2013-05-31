@@ -1,0 +1,5 @@
+*.csproj
+*.pidb
+gamedev_week1/Library/
+*.sln
+gamedev_week1/gamedev_week1.userprefs
