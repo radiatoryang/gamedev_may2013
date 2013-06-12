@@ -14,6 +14,10 @@ public class CharacterMotor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if ( Mathf.Abs( Input.GetAxis( "Mouse X" ) ) > 0.1f ) {
+            // then rotate
+        }
+
         // grab virtual joystick (from -1 to 1) and apply forward motion
         if ( Mathf.Abs( Input.GetAxis( "Vertical" ) ) > 0.1f ) {
             controller.SimpleMove( transform.forward * speed * Input.GetAxis( "Vertical" ) );
