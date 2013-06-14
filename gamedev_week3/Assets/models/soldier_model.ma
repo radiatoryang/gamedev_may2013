@@ -1,6 +1,6 @@
 //Maya ASCII 2012 scene
 //Name: soldier_model.ma
-//Last modified: Wed, Jun 05, 2013 11:32:01 AM
+//Last modified: Wed, Jun 12, 2013 03:25:25 PM
 //Codeset: 1252
 requires maya "2012";
 requires "stereoCamera" "10.0";
@@ -13,15 +13,16 @@ fileInfo "osv" "Microsoft Windows 7 Home Premium Edition, 64-bit Windows 7 Servi
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 49.4502296442122 225.01195220987424 284.91387728878072 ;
-	setAttr ".r" -type "double3" -19.538352729601925 12.999999999999842 0 ;
+	setAttr ".t" -type "double3" 46.259242469159929 175.61477956988153 128.77165398454247 ;
+	setAttr ".r" -type "double3" -26.138352729602271 12.600000000001222 -2.8516626159304179e-015 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
-	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 270.5478538184575;
+	setAttr ".fl" 34.999999999999986;
+	setAttr ".coi" 136.3437731166072;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".tp" -type "double3" -2.6756820998571129 94.748535349401337 14.163971731697437 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	setAttr ".v" no;
@@ -67,7 +68,6 @@ createNode camera -s -n "sideShape" -p "side";
 createNode joint -n "Pelvis";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -0.37290800559601001 94.598266601560795 1.5536597639770509 ;
 	setAttr ".r" -type "double3" 179.99998474121097 -89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 1 0.99999999999999989 0.99999999999999989 ;
@@ -76,11 +76,11 @@ createNode joint -n "Pelvis";
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 -3.5251000000000002e-007 94.598267000000007 1.478513 1;
 	setAttr ".radi" 1.9495601749420166;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LLegUpper" -p "Pelvis";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -3.4340896606445313 -0.31900906562805176 8.6192140579223633 ;
 	setAttr ".r" -type "double3" 163.22769403457593 -5.7437206805315446 -179.77979982396303 ;
 	setAttr ".s" -type "double3" 0.99999994970857886 0.99999994970857908 0.99999999068677592 ;
@@ -89,11 +89,11 @@ createNode joint -n "LLegUpper" -p "Pelvis";
 		 0.28611300000000001 0.026132499999999999 0.95784000000000002 0 -0.95020899999999997 -0.121064 0.28713699999999998 0
 		 8.6192510000000002 91.164207000000005 1.159494 1;
 	setAttr ".radi" 8.7264859771728531;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LLegCalf" -p "LLegUpper";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 41.554697573185216 4.0233136722189617e-007 0 ;
 	setAttr ".r" -type "double3" -0.1836857167187711 1.686036067154268 -10.61214575957681 ;
 	setAttr ".s" -type "double3" 1.0000001918524597 0.99999998137355228 0.99999994039535522 ;
@@ -101,11 +101,11 @@ createNode joint -n "LLegCalf" -p "LLegUpper";
 	setAttr ".bps" -type "matrix" 0.0331756 -0.98180999999999996 -0.186946 0 0.30510500000000002 -0.16817099999999999 0.93735199999999996 0
 		 -0.95174099999999995 -0.088135199999999997 0.29397600000000002 0 13.749713 49.929419000000003 0.75197499999999995 1;
 	setAttr ".radi" 7.8493676376342796;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LLegAnkle" -p "LLegCalf";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 37.377937227487585 1.2125819930208767e-006 -1.6987324126915801e-006 ;
 	setAttr ".r" -type "double3" -7.8229343966990017 -2.3936086634391498 55.326083542213134 ;
 	setAttr ".s" -type "double3" 1 0.99999994039535511 1.0000001005828418 ;
@@ -114,11 +114,11 @@ createNode joint -n "LLegAnkle" -p "LLegCalf";
 		 0.242066 0.72065199999999996 0.64966699999999999 0 -0.93697699999999995 -0.00025734800000000002 0.34940300000000002 0
 		 14.989758999999999 13.231388000000001 -6.2356619999999996 1;
 	setAttr ".radi" 3.3574811840057377;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LLegToe1" -p "LLegAnkle";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 15.988004729151713 4.172326067308715e-007 4.3213359961491868e-007 ;
 	setAttr ".r" -type "double3" -0.0031186941168286509 -6.9151752179528181 43.903836875380797 ;
 	setAttr ".s" -type "double3" 0.99999994039535522 1.0000000186264477 0.99999994039535522 ;
@@ -127,40 +127,40 @@ createNode joint -n "LLegToe1" -p "LLegAnkle";
 		 -1.3332100000000001e-007 1 -1.8045899999999999e-007 0 -0.97227399999999997 -8.7425099999999996e-008 0.233845 0
 		 19.018159000000001 2.146922 4.5589380000000004 1;
 	setAttr ".radi" 3.3574811840057377;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Spine1" -p "Pelvis";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 -3.5251000000000002e-007 94.598267000000007 1.478513 1;
 	setAttr ".radi" 4.2499749755859391;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Spine2" -p "Spine1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 20.23797607421875 0 0 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 -3.5251000000000002e-007 114.836243 1.4785090000000001 1;
 	setAttr ".radi" 4.2499749755859391;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Spine3" -p "Spine2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 20.23797607421875 1.1920928955078125e-007 0 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 -3.5251000000000002e-007 135.074219 1.4785060000000001 1;
 	setAttr ".radi" 5.416606750488282;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Neck1" -p "Spine3";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 25.793365478515625 1.430511474609375e-005 3.5762786865234375e-007 ;
 	setAttr ".r" -type "double3" 3.1118769645690936 6.830191523476972e-006 2.3696978997167498e-023 ;
 	setAttr ".s" -type "double3" 1.0000001192092896 1.0000002384185791 1.0000001192092896 ;
@@ -168,22 +168,22 @@ createNode joint -n "Neck1" -p "Spine3";
 	setAttr ".bps" -type "matrix" 0 1 0 0 -2.5065700000000002e-007 0 1 0 1 0 2.5065700000000002e-007 0
 		 4.6061500000000002e-010 160.86758399999999 1.4785159999999999 1;
 	setAttr ".radi" 1.5130439758300784;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "NeckHead" -p "Neck1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 7.2049713134765625 -1.1920928955078125e-007 5.9604644775390625e-008 ;
 	setAttr ".r" -type "double3" 8.7504720687866229 0 0 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0 1 0 0 -2.5065700000000002e-007 0 1 0 1 0 2.5065700000000002e-007 0
 		 4.60866e-010 168.07255599999999 1.478515 1;
 	setAttr ".radi" 2.4821060085296631;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Reyelid" -p "NeckHead";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 6.7535858154296875 9.0698462203144956 -3.4393024444580078 ;
 	setAttr ".r" -type "double3" 1.1952835848205728e-005 -6.9475813688768557e-006 -9.0396800984067932e-029 ;
 	setAttr ".s" -type "double3" 0.99999988079071045 0.99999970197677612 0.99999982118606567 ;
@@ -191,11 +191,11 @@ createNode joint -n "Reyelid" -p "NeckHead";
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 -3.4393039999999999 174.82614100000001 10.548356999999999 1;
 	setAttr ".radi" 2.4821060085296631;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Leyelid" -p "NeckHead";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 6.7535858154296875 9.0698432922363281 3.4393033981323242 ;
 	setAttr ".r" -type "double3" 1.1952835848205728e-005 -6.9475813688768557e-006 -9.0396800984067932e-029 ;
 	setAttr ".s" -type "double3" 0.99999988079071045 0.99999970197677612 0.99999982118606567 ;
@@ -203,11 +203,11 @@ createNode joint -n "Leyelid" -p "NeckHead";
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 3.4393020000000001 174.82614100000001 10.548355000000001 1;
 	setAttr ".radi" 2.4821056079864503;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Rbrow" -p "NeckHead";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 8.311676025390625 10.492085523903363 -3.5565681457519531 ;
 	setAttr ".r" -type "double3" 1.1952835848205728e-005 -6.9475813688768557e-006 -9.0396800984067932e-029 ;
 	setAttr ".s" -type "double3" 0.99999988079071045 0.99999970197677612 0.99999982118606567 ;
@@ -215,11 +215,11 @@ createNode joint -n "Rbrow" -p "NeckHead";
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 -3.5565699999999998 176.384232 11.970597 1;
 	setAttr ".radi" 2.9084582233428957;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Lbrow" -p "NeckHead";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 8.311676025390625 10.492082595825195 3.5565708260983118 ;
 	setAttr ".r" -type "double3" 1.1952835848205728e-005 -6.9475813688768557e-006 -9.0396800984067932e-029 ;
 	setAttr ".s" -type "double3" 0.99999988079071045 0.99999970197677612 0.99999982118606567 ;
@@ -227,11 +227,11 @@ createNode joint -n "Lbrow" -p "NeckHead";
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 3.556568 176.384232 11.970596 1;
 	setAttr ".radi" 2.9084578227996825;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Rmouth" -p "NeckHead";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -1.993072509765625 10.49208361655473 -2.9921765327453613 ;
 	setAttr ".r" -type "double3" 1.1952835848205728e-005 -6.9475813688768557e-006 -9.0396800984067932e-029 ;
 	setAttr ".s" -type "double3" 0.99999988079071045 0.99999970197677612 0.99999982118606567 ;
@@ -239,11 +239,11 @@ createNode joint -n "Rmouth" -p "NeckHead";
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 -2.992178 166.07948300000001 11.970597 1;
 	setAttr ".radi" 2.3291009044647222;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "Lmouth" -p "NeckHead";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -1.993072509765625 10.492080882191626 2.9921786785125732 ;
 	setAttr ".r" -type "double3" 1.1952835848205728e-005 -6.9475813688768557e-006 -9.0396800984067932e-029 ;
 	setAttr ".s" -type "double3" 0.99999988079071045 0.99999970197677612 0.99999982118606567 ;
@@ -251,11 +251,11 @@ createNode joint -n "Lmouth" -p "NeckHead";
 	setAttr ".bps" -type "matrix" 0 1 0 0 -8.7422800000000004e-008 0 1 0 1 0 8.7422800000000004e-008 0
 		 2.9921760000000002 166.07948300000001 11.970596 1;
 	setAttr ".radi" 2.3291007041931153;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmCollarbone" -p "Spine3";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 21.716293334960937 -3.5762786865234375e-007 -0.91665990091860106 ;
 	setAttr ".r" -type "double3" 69.686668395996051 101.73473358154295 68.083198547363253 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 0.99999994039535534 0.99999994039535511 ;
@@ -264,11 +264,11 @@ createNode joint -n "RArmCollarbone" -p "Spine3";
 		 -0.097272399999999995 -0.0085327800000000002 0.99522100000000002 0 -0.34055999999999997 0.93988400000000005 -0.025227800000000002 0
 		 -0.91669100000000003 156.79055299999999 1.4785010000000001 1;
 	setAttr ".radi" 3.6122036361694341;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmUpper1" -p "RArmCollarbone";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 17.200967609882383 0 1.52587890625e-005 ;
 	setAttr ".r" -type "double3" -36.088758587837589 43.881446838378928 40.096435308455717 ;
 	setAttr ".s" -type "double3" 1.0000001005828418 0.99999994039535534 0.99999994039535511 ;
@@ -277,11 +277,11 @@ createNode joint -n "RArmUpper1" -p "RArmCollarbone";
 		 0.37229499999999999 -0.18974199999999999 0.90851199999999999 0 -0.60534900000000003 0.69236299999999995 0.39266299999999998 0
 		 -17.002592 150.91830100000001 -0.14410300000000001 1;
 	setAttr ".radi" 2.8036028194427498;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmUpper2" -p "RArmUpper1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 13.350486934184982 1.7881388760799079e-007 -6.2584879080063071e-006 ;
 	setAttr ".r" -type "double3" -15.095080673692536 1.4407430985389333e-006 2.614681983181745e-006 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 0.9999999683350268 1 ;
@@ -290,11 +290,11 @@ createNode joint -n "RArmUpper2" -p "RArmUpper1";
 		 0.48767500000000003 -0.32664500000000002 0.809616 0 -0.51693900000000004 0.63927599999999996 0.569299 0
 		 -26.395083 141.624405 1.763752 1;
 	setAttr ".radi" 2.8036004161834724;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmForearm1" -p "RArmUpper2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 13.350487291812836 -1.7881388760799079e-007 7.9870223064659818e-006 ;
 	setAttr ".r" -type "double3" -90.377449214898434 -31.289621412733197 94.288575292652638 ;
 	setAttr ".s" -type "double3" 1.0000001192092896 1.0000001005828418 1 ;
@@ -303,11 +303,11 @@ createNode joint -n "RArmForearm1" -p "RArmUpper2";
 		 0.83861200000000002 -0.54223900000000003 0.052035199999999997 0 0.458733 0.75450499999999998 0.46934599999999999 0
 		 -35.787481999999997 132.33028999999999 3.6716259999999998 1;
 	setAttr ".radi" 2.8034662342071539;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmForearm2" -p "RArmForearm1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 13.349838688969538 0 -7.1525575059183441e-006 ;
 	setAttr ".r" -type "double3" -7.6362975687462251 -2.1344341547546867e-006 9.4787915988669358e-023 ;
 	setAttr ".s" -type "double3" 1.0000000186264477 1 0.99999999068677614 ;
@@ -316,11 +316,11 @@ createNode joint -n "RArmForearm2" -p "RArmForearm1";
 		 0.78567799999999999 -0.61863100000000004 0.0023530600000000001 0 0.54444099999999995 0.69325000000000003 0.472215 0
 		 -39.709035999999998 127.39449399999999 15.439271 1;
 	setAttr ".radi" 2.8034668350219727;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmHand" -p "RArmForearm2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 13.349839605391105 -1.5497205108516838e-006 -3.5762777521598158e-007 ;
 	setAttr ".r" -type "double3" 46.108229459137341 19.088211808205685 35.467089772822874 ;
 	setAttr ".s" -type "double3" 0.99999989941715817 0.99999994970857919 0.99999989010393453 ;
@@ -329,11 +329,11 @@ createNode joint -n "RArmHand" -p "RArmForearm2";
 		 0.96066499999999999 0.27142500000000003 0.058749599999999999 0 -0.27176899999999998 0.875309 0.39997100000000002 0
 		 -43.630732999999999 122.45875700000001 27.206771 1;
 	setAttr ".radi" 2.1275607776641845;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmPinky1" -p "RArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 9.0510936975479268 -0.26821127533914996 -4.5439824461938878 ;
 	setAttr ".r" -type "double3" 14.56896767020228 2.8350029885769206 72.67679715156531 ;
 	setAttr ".s" -type "double3" 0.99999994970857886 1.0000000186264477 0.99999994039535511 ;
@@ -342,24 +342,24 @@ createNode joint -n "RArmPinky1" -p "RArmHand";
 		 0.43373400000000001 0.77478999999999998 -0.45997300000000002 0 -0.209677 0.58326599999999995 0.78475200000000001 0
 		 -42.136262000000002 114.786236 33.652099999999997 1;
 	setAttr ".radi" 0.72357210159301777;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmPinky2" -p "RArmPinky1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 3.4455828368664752 5.3644174276001405e-007 0 ;
-	setAttr ".r" -type "double3" -2.3532135132823687e-005 -0.00022000681434202621 57.54830431938197 ;
+	setAttr ".r" -type "double3" -2.3532135132823691e-005 -0.00022000681434202621 57.54830431938197 ;
 	setAttr ".s" -type "double3" 0.99999989010393442 1.0000000819563941 1.0000001192092896 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0.94487600000000005 -0.085554400000000003 0.31605299999999997 0
 		 0.25148199999999998 0.80776300000000001 -0.53317599999999998 0 -0.20968000000000001 0.58326699999999998 0.78475099999999998 0
 		 -39.116861999999998 113.94578799999999 35.083461999999997 1;
 	setAttr ".radi" 0.3815780675411225;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmPinky3" -p "RArmPinky2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 1.8170463740826996 6.6161157631583305e-006 0 ;
 	setAttr ".r" -type "double3" 7.326445137640512e-005 0.00018206723940597768 41.875382065772889 ;
 	setAttr ".s" -type "double3" 0.99999994970857908 0.99999998137355217 0.99999999999999989 ;
@@ -368,11 +368,11 @@ createNode joint -n "RArmPinky3" -p "RArmPinky2";
 		 -0.0262136 0.798952 -0.60082400000000002 0 -0.209677 0.58326699999999998 0.78475200000000001 0
 		 -37.400002000000001 113.790358 35.657787999999996 1;
 	setAttr ".radi" 0.3815780675411225;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmRing1" -p "RArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 9.9753643274307393 -0.77821800112713979 -2.1833208203312733 ;
 	setAttr ".r" -type "double3" 3.321214877069004 3.5407164618373299 83.119392395019531 ;
 	setAttr ".s" -type "double3" 1 1.0000000186264477 1 ;
@@ -381,11 +381,11 @@ createNode joint -n "RArmRing1" -p "RArmHand";
 		 0.63349500000000003 0.56892200000000004 -0.52441599999999999 0 -0.27144499999999999 0.79809600000000003 0.53792200000000001 0
 		 -43.215004999999998 116.344188 35.411687999999998 1;
 	setAttr ".radi" 1.0218806648254397;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmRing2" -p "RArmRing1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 4.8660994470120977 5.3644174276001405e-007 -6.6161157631583305e-006 ;
 	setAttr ".r" -type "double3" 2.174455116708569e-005 9.1300425604423649e-005 77.503828763962034 ;
 	setAttr ".s" -type "double3" 0.99999989010393431 0.99999984912573714 1.0000000186264477 ;
@@ -394,11 +394,11 @@ createNode joint -n "RArmRing2" -p "RArmRing1";
 		 0.55019899999999999 0.58725300000000002 -0.59364600000000001 0 -0.27144299999999999 0.79809600000000003 0.53792399999999996 0
 		 -39.689158999999997 115.378708 38.623463000000001 1;
 	setAttr ".radi" 0.57073522567749024;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmRing3" -p "RArmRing2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 2.7177885174751748 4.1723250808090022e-006 6.4373018755503388e-006 ;
 	setAttr ".r" -type "double3" -1.7875883041107464e-005 -8.2229064165391494e-005 57.428749680519005 ;
 	setAttr ".s" -type "double3" 1.0000001005828418 1.0000001005828418 0.99999999068677614 ;
@@ -407,11 +407,11 @@ createNode joint -n "RArmRing3" -p "RArmRing2";
 		 0.405061 0.60172999999999999 -0.68836600000000003 0 -0.27144400000000002 0.79809600000000003 0.53792300000000004 0
 		 -37.542921999999997 115.012272 40.250008999999999 1;
 	setAttr ".radi" 0.57073522567749024;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmMid1" -p "RArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 9.7014538049698018 -0.84096172451969953 0.58333534002310095 ;
 	setAttr ".r" -type "double3" 0 9.21880266070381 72.932083129882827 ;
 	setAttr ".s" -type "double3" 0.99999989941715817 0.99999994970857919 0.99999994039535522 ;
@@ -420,11 +420,11 @@ createNode joint -n "RArmMid1" -p "RArmHand";
 		 0.75616099999999997 0.45130599999999998 -0.47386299999999998 0 -0.27176800000000001 0.875309 0.39997100000000002 0
 		 -44.042785000000002 118.858521 36.264080999999997 1;
 	setAttr ".radi" 1.2776878881454468;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmMid2" -p "RArmMid1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 6.0842358469963935 6.6161157631583305e-006 -5.3644174276001405e-007 ;
 	setAttr ".r" -type "double3" -2.3131928554407795e-005 3.0332133116374176e-021 91.569128751755017 ;
 	setAttr ".s" -type "double3" 1.0000000912696179 1.0000001005828418 1.0000002011656837 ;
@@ -433,24 +433,24 @@ createNode joint -n "RArmMid2" -p "RArmMid1";
 		 0.53927099999999994 0.48274299999999998 -0.69003300000000001 0 -0.27176800000000001 0.87531000000000003 0.39997100000000002 0
 		 -40.420906000000002 117.801998 41.037273999999996 1;
 	setAttr ".radi" 0.57707141876220702;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmMid3" -p "RArmMid2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 2.7479633092879316 0 0 ;
-	setAttr ".r" -type "double3" 1.4620875993591146e-005 1.2859966678468941e-005 38.060122847557174 ;
+	setAttr ".r" -type "double3" 1.4620875993591146e-005 1.2859966678468943e-005 38.060122847557174 ;
 	setAttr ".s" -type "double3" 0.99999994970857908 0.99999979883431644 1 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0.77836399999999994 -0.044488800000000002 0.62623499999999999 0
 		 0.56594299999999997 0.481514 -0.66921799999999998 0 -0.27176800000000001 0.875309 0.39997100000000002 0
 		 -38.230598999999998 117.72451100000001 42.694971000000002 1;
 	setAttr ".radi" 0.57707141876220702;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmIndex1" -p "RArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 9.1602408289907569 -0.21468049287783356 3.6640489697453358 ;
 	setAttr ".r" -type "double3" -11.31182625889787 -9.7337018549442007 11.239229708910079 ;
 	setAttr ".s" -type "double3" 1 0.99999989941715817 0.99999994970857908 ;
@@ -459,11 +459,11 @@ createNode joint -n "RArmIndex1" -p "RArmHand";
 		 0.87907299999999999 0.38373000000000002 -0.28281600000000001 0 -0.32163900000000001 0.91535599999999995 0.242225 0
 		 -44.309246000000002 121.941622 37.038137999999996 1;
 	setAttr ".radi" 1.0895182943344119;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmIndex2" -p "RArmIndex1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 5.1881883740422108 1.7881392757601158e-007 -1.3709065433076515e-006 ;
 	setAttr ".r" -type "double3" 5.4374703094265586e-005 0.00027977094583458344 63.717131972313034 ;
 	setAttr ".s" -type "double3" 1.0000000186264477 1.0000001192092896 1.0000000186264477 ;
@@ -472,11 +472,11 @@ createNode joint -n "RArmIndex2" -p "RArmIndex1";
 		 0.66331600000000002 0.40038000000000001 -0.63222500000000004 0 -0.32163599999999998 0.91535500000000003 0.242229 0
 		 -42.483978999999998 121.30881599999999 41.853158000000001 1;
 	setAttr ".radi" 0.52122703313827534;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmIndex3" -p "RArmIndex2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 2.4820328652858898 3.3974648253831603e-006 6.6161157631583305e-006 ;
 	setAttr ".r" -type "double3" -5.1493228798779161e-005 -0.00019021811079508461 19.665737748145943 ;
 	setAttr ".s" -type "double3" 0.99999994970857908 0.99999986775218508 1.0000000186264477 ;
@@ -485,11 +485,11 @@ createNode joint -n "RArmIndex3" -p "RArmIndex2";
 		 0.54044999999999999 0.38752999999999999 -0.74681600000000004 0 -0.32163799999999998 0.91535599999999995 0.242226 0
 		 -40.806770999999998 121.414795 43.679755999999998 1;
 	setAttr ".radi" 0.52122703313827534;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmThumb1" -p "RArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 0.99930346012151505 1.4168013632297749 3.2520583868029265 ;
 	setAttr ".r" -type "double3" 45.038746476173287 -10.198210567235977 36.052525162696725 ;
 	setAttr ".s" -type "double3" 0.99999994039535522 0.99999994970857919 0.99999983049928953 ;
@@ -498,11 +498,11 @@ createNode joint -n "RArmThumb1" -p "RArmHand";
 		 -0.32900299999999999 0.94432199999999999 -0.0039617300000000001 0 -0.78632100000000005 -0.27162700000000001 0.55490499999999998 0
 		 -43.096361000000002 125.289969 29.504781000000001 1;
 	setAttr ".radi" 0.80501219987869277;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmThumb2" -p "RArmThumb1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 3.8333974480628363 -1.3589859381468684e-005 -2.9504300663951626e-006 ;
 	setAttr ".r" -type "double3" -2.1895952895284534 -1.021059308200996 -13.719392985105662 ;
 	setAttr ".s" -type "double3" 1 1.0000001192092896 1.0000001005828418 ;
@@ -511,19 +511,20 @@ createNode joint -n "RArmThumb2" -p "RArmThumb1";
 		 -0.17535100000000001 0.97177800000000003 0.15779599999999999 0 -0.803531 -0.233877 0.54739400000000005 0
 		 -41.091706000000002 126.00166299999999 32.693784000000001 1;
 	setAttr ".radi" 0.90791230201721207;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RArmThumb3" -p "RArmThumb2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 4.3233970403667659 -1.7285343984596747e-006 -3.2782549093113585e-006 ;
-	setAttr ".r" -type "double3" 0.12762188864879953 -1.5628260262308373 -55.800135970115768 ;
+	setAttr ".r" -type "double3" 0.12762188864879953 -1.5628260262308376 -55.800135970115768 ;
 	setAttr ".s" -type "double3" 1 0.99999986775218508 0.999999918043606 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0.57659899999999997 -0.26534799999999997 0.77273800000000004 0
 		 -0.0219074 0.94043200000000005 0.339279 0 -0.81673399999999996 -0.21255599999999999 0.536439 0
 		 -38.632353999999999 125.868593 36.247025999999998 1;
 	setAttr ".radi" 0.90791230201721207;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode transform -n "M4MB" -p "RArmHand";
 	setAttr ".t" -type "double3" 7.7622613906860352 3.8249087333679199 -0.25267708301544189 ;
@@ -10346,7 +10347,6 @@ createNode mesh -n "M4MBShape" -p "M4MB";
 createNode joint -n "LArmCollarbone" -p "Spine3";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 21.716293334960937 -4.76837158203125e-007 0.91665983200073242 ;
 	setAttr ".r" -type "double3" 174.98133850097656 -69.769531250000028 179.12257385253906 ;
 	setAttr ".s" -type "double3" 0.99999994039535511 1 0.99999999999999989 ;
@@ -10355,11 +10355,11 @@ createNode joint -n "LArmCollarbone" -p "Spine3";
 		 0.097272300000000006 -0.0085328000000000001 0.99522100000000002 0 -0.34055999999999997 -0.93988400000000005 0.025227800000000002 0
 		 0.91668799999999995 156.79055399999999 1.4785010000000001 1;
 	setAttr ".radi" 3.6122032356262208;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmUpper1" -p "LArmCollarbone";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 17.200965613126783 4.3213359961491868e-007 -1.3232231526316661e-005 ;
 	setAttr ".r" -type "double3" 35.501587659253339 -40.431989729418362 26.87204644078292 ;
 	setAttr ".s" -type "double3" 1 1.0000001005828418 1.0000001192092896 ;
@@ -10368,24 +10368,24 @@ createNode joint -n "LArmUpper1" -p "LArmCollarbone";
 		 -0.37229499999999999 -0.18974199999999999 0.90851199999999999 0 -0.60534900000000003 -0.69236399999999998 -0.39266299999999998 0
 		 17.002634 150.91830999999999 -0.144096 1;
 	setAttr ".radi" 2.8036008167266853;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmUpper2" -p "LArmUpper1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 13.350479125976563 4.3213359961491868e-007 -5.9008601327903253e-006 ;
-	setAttr ".r" -type "double3" 15.885980755090676 1.4407430985389331e-006 -2.3696978997167337e-023 ;
+	setAttr ".r" -type "double3" 15.885980755090676 1.4407430985389333e-006 -2.3696978997167337e-023 ;
 	setAttr ".s" -type "double3" 1 0.99999999999999989 0.99999999999999989 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" 0.70352599999999998 -0.69615300000000002 0.142904 0
 		 -0.48767500000000003 -0.32664399999999999 0.809616 0 -0.51693800000000001 -0.63927599999999996 -0.569299 0
 		 26.395047999999999 141.62431599999999 1.7636689999999999 1;
 	setAttr ".radi" 2.8036008167266853;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmForearm1" -p "LArmUpper2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 13.3504939079286 0 6.0796740203983162e-006 ;
 	setAttr ".r" -type "double3" 65.495296120637846 12.107593186193448 50.554291009875236 ;
 	setAttr ".s" -type "double3" 1.0000002197921314 1.0000001192092896 1.0000001192092896 ;
@@ -10394,11 +10394,11 @@ createNode joint -n "LArmForearm1" -p "LArmUpper2";
 		 -0.83861200000000002 -0.542238 0.052035199999999997 0 0.458733 -0.75450499999999998 -0.46934599999999999 0
 		 35.787508000000003 132.33028300000001 3.6716120000000001 1;
 	setAttr ".radi" 2.8034664344787599;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmForearm2" -p "LArmForearm1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 13.349839985370336 -5.3644174276001405e-007 1.7881388760799079e-007 ;
 	setAttr ".r" -type "double3" -8.8139157816934457 0 0 ;
 	setAttr ".s" -type "double3" 1 1 1.0000001005828418 ;
@@ -10407,11 +10407,11 @@ createNode joint -n "LArmForearm2" -p "LArmForearm1";
 		 -0.78567799999999999 -0.61863100000000004 0.0023530600000000001 0 0.54444000000000004 -0.69325099999999995 -0.472215 0
 		 39.709063999999998 127.39448400000001 15.439256 1;
 	setAttr ".radi" 2.8034672355651855;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmHand" -p "LArmForearm2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 13.349838167428993 -7.1525575059183441e-006 -7.1525575059183441e-006 ;
 	setAttr ".r" -type "double3" -147.37997818006721 -6.8120000995911214 -6.4617818817284229 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 1.0000001192092896 1.0000002197921314 ;
@@ -10420,11 +10420,11 @@ createNode joint -n "LArmHand" -p "LArmForearm2";
 		 -0.96066600000000002 0.271424 0.0587494 0 -0.27176800000000001 -0.875309 -0.39997199999999999 0
 		 43.630668999999997 122.458752 27.206762000000001 1;
 	setAttr ".radi" 2.1275625801086426;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmPinky1" -p "LArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 9.0511099398134895 -0.26820999383947053 4.543979898095083 ;
 	setAttr ".r" -type "double3" 14.735881507396764 3.4954023957251885 52.03082275390625 ;
 	setAttr ".s" -type "double3" 0.99999998137355228 0.99999999068677614 0.99999988079071056 ;
@@ -10433,24 +10433,24 @@ createNode joint -n "LArmPinky1" -p "LArmHand";
 		 -0.43373400000000001 0.77478999999999998 -0.45997300000000002 0 -0.209677 -0.58326599999999995 -0.78475300000000003 0
 		 42.136299000000001 114.786231 33.652096 1;
 	setAttr ".radi" 0.72357195138931285;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmPinky2" -p "LArmPinky1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 3.4455828368664752 -1.7285343984596747e-006 0 ;
-	setAttr ".r" -type "double3" 2.1517763961784198e-005 0.00020509245873429974 44.30187928676618 ;
+	setAttr ".r" -type "double3" 2.1517763961784202e-005 0.00020509245873429977 44.30187928676618 ;
 	setAttr ".s" -type "double3" 0.99999988079071034 0.99999998137355217 0.99999989010393431 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" -0.94487600000000005 -0.085554400000000003 0.31605299999999997 0
 		 -0.25148199999999998 0.80776300000000001 -0.53317599999999998 0 -0.20968000000000001 -0.58326699999999998 -0.78475099999999998 0
 		 39.116858000000001 113.94578 35.083471000000003 1;
 	setAttr ".radi" 0.38157814264297485;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmPinky3" -p "LArmPinky2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 1.8170412182804923 -8.9406943803995395e-008 1.3411043569000351e-007 ;
 	setAttr ".r" -type "double3" -8.0975722827697873e-005 -0.00018841716751832207 38.802939176559683 ;
 	setAttr ".s" -type "double3" 1.0000000186264477 0.99999994970857919 1.0000001192092893 ;
@@ -10459,11 +10459,11 @@ createNode joint -n "LArmPinky3" -p "LArmPinky2";
 		 0.0262136 0.798952 -0.60082400000000002 0 -0.209677 -0.58326699999999998 -0.78475200000000001 0
 		 37.399968999999999 113.790358 35.657800999999999 1;
 	setAttr ".radi" 0.38157814264297485;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmRing1" -p "LArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 9.9753651320933532 -0.77823674678793142 2.1833096295594956 ;
 	setAttr ".r" -type "double3" 17.787329733371916 7.6365884691476094 48.817635178565851 ;
 	setAttr ".s" -type "double3" 0.9999999217689074 0.99999994039535522 0.9999998901039342 ;
@@ -10472,11 +10472,11 @@ createNode joint -n "LArmRing1" -p "LArmHand";
 		 -0.63349500000000003 0.56892200000000004 -0.52441700000000002 0 -0.27144400000000002 -0.79809699999999995 -0.53792300000000004 0
 		 43.214976 116.34424300000001 35.411669000000003 1;
 	setAttr ".radi" 1.0218806648254397;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmRing2" -p "LArmRing1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 4.8661021292206392 1.7285343984596747e-006 -5.1409014365510418e-007 ;
 	setAttr ".r" -type "double3" -2.6253541464985974e-005 -0.00010644824206329655 50.880672454833977 ;
 	setAttr ".s" -type "double3" 0.99999994039535534 0.99999996833502669 0.99999997206032842 ;
@@ -10485,11 +10485,11 @@ createNode joint -n "LArmRing2" -p "LArmRing1";
 		 -0.55019899999999999 0.58725300000000002 -0.59364600000000001 0 -0.27144299999999999 -0.79809600000000003 -0.53792399999999996 0
 		 39.689134000000003 115.378714 38.623435999999998 1;
 	setAttr ".radi" 0.57073557615280146;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmRing3" -p "LArmRing2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 2.7177852392202655 -4.7683714086588328e-006 2.980232571614363e-007 ;
 	setAttr ".r" -type "double3" 3.0855915420736415e-005 8.3536406718400449e-005 49.286037445068345 ;
 	setAttr ".s" -type "double3" 1.0000001192092896 0.99999994039535534 1.0000000186264477 ;
@@ -10498,11 +10498,11 @@ createNode joint -n "LArmRing3" -p "LArmRing2";
 		 -0.405059 0.60172999999999999 -0.688365 0 -0.27144400000000002 -0.79809600000000003 -0.53792300000000004 0
 		 37.542937999999999 115.012304 40.250132000000001 1;
 	setAttr ".radi" 0.57073557615280146;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmMid1" -p "LArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 9.7014462649822537 -0.84097361564625539 -0.58332604169851576 ;
 	setAttr ".r" -type "double3" 18.494616866111873 5.0026683807373091 39.261170029640084 ;
 	setAttr ".s" -type "double3" 0.99999988079071034 0.99999989941715806 0.99999988079071034 ;
@@ -10511,24 +10511,24 @@ createNode joint -n "LArmMid1" -p "LArmHand";
 		 -0.75616000000000005 0.45130599999999998 -0.47386299999999998 0 -0.27176800000000001 -0.875309 -0.39997100000000002 0
 		 44.042751000000003 118.858496 36.264080999999997 1;
 	setAttr ".radi" 1.2776881885528564;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmMid2" -p "LArmMid1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 6.0842328667640109 1.7881388760799079e-007 1.1697411162137094e-006 ;
-	setAttr ".r" -type "double3" 2.2678362303885002e-005 4.5223321549464003e-006 54.932718992233504 ;
+	setAttr ".r" -type "double3" 2.2678362303885002e-005 4.5223321549464012e-006 54.932718992233504 ;
 	setAttr ".s" -type "double3" 1.0000000186264477 1 1 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" -0.79707499999999998 -0.028163400000000002 0.60322299999999995 0
 		 -0.53927099999999994 0.48274299999999998 -0.69003300000000001 0 -0.27176800000000001 -0.87531000000000003 -0.39997100000000002 0
 		 40.420920000000002 117.801968 41.037253999999997 1;
 	setAttr ".radi" 0.57707096815109249;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmMid3" -p "LArmMid2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 2.7479498982425175 -3.576278752959172e-006 -6.9290395801058434e-007 ;
 	setAttr ".r" -type "double3" -3.2215780391008009e-005 -3.2356688611744794e-005 49.014557480811959 ;
 	setAttr ".s" -type "double3" 0.99999998137355228 0.99999998137355239 1.0000000819563941 ;
@@ -10537,11 +10537,11 @@ createNode joint -n "LArmMid3" -p "LArmMid2";
 		 -0.56594299999999997 0.481514 -0.66921799999999998 0 -0.27176800000000001 -0.875309 -0.39997100000000002 0
 		 38.230606000000002 117.72448 42.694958999999997 1;
 	setAttr ".radi" 0.57707096815109249;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmIndex1" -p "LArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 9.160247802734375 -0.2146821618082205 -3.6640722602605433 ;
 	setAttr ".r" -type "double3" 16.788154602050781 16.372665107250274 10.919689834117948 ;
 	setAttr ".s" -type "double3" 0.99999994039535534 0.99999994039535511 0.99999994039535522 ;
@@ -10550,11 +10550,11 @@ createNode joint -n "LArmIndex1" -p "LArmHand";
 		 -0.87907199999999996 0.38372899999999999 -0.28281699999999999 0 -0.32163799999999998 -0.91535599999999995 -0.242225 0
 		 44.309277000000002 121.94161800000001 37.038009000000002 1;
 	setAttr ".radi" 1.0895181941986083;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmIndex2" -p "LArmIndex1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 5.1881828308105469 -6.4373018755503388e-006 1.6540289407895826e-006 ;
 	setAttr ".r" -type "double3" -5.6292364764826534e-005 -0.00027259388482844316 15.30599015951138 ;
 	setAttr ".s" -type "double3" 1.0000000912696179 0.99999998137355228 0.99999993108213137 ;
@@ -10563,37 +10563,37 @@ createNode joint -n "LArmIndex2" -p "LArmIndex1";
 		 -0.66331399999999996 0.40038099999999999 -0.63222599999999995 0 -0.32163700000000001 -0.91535599999999995 -0.24223 0
 		 42.484005000000003 121.308899 41.853209999999997 1;
 	setAttr ".radi" 0.52122688293457042;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmIndex3" -p "LArmIndex2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 2.482028871774697 1.1920926556996608e-006 -1.8328428483815837e-006 ;
-	setAttr ".r" -type "double3" 4.9512199880013877e-005 0.00018834612232313062 18.139036178588864 ;
+	setAttr ".r" -type "double3" 4.9512199880013877e-005 0.00018834612232313064 18.139036178588864 ;
 	setAttr ".s" -type "double3" 0.99999984912573725 1.0000000186264477 1.0000000186264477 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" -0.77747299999999997 0.109294 0.61934800000000001 0
 		 -0.54044899999999996 0.38753100000000001 -0.74681699999999995 0 -0.32163900000000001 -0.91535599999999995 -0.242227 0
 		 40.806848000000002 121.414863 43.679803999999997 1;
 	setAttr ".radi" 0.52122688293457042;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmThumb1" -p "LArmHand";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 0.99929413199429051 1.4167852997781383 -3.2520609349010896 ;
-	setAttr ".r" -type "double3" -70.888786315917955 27.641548752784608 30.558011114597502 ;
+	setAttr ".r" -type "double3" -70.888786315917955 27.641548752784612 30.558011114597502 ;
 	setAttr ".s" -type "double3" 0.99999999068677614 0.99999998137355239 0.99999999068677625 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" -0.52293199999999995 0.18568000000000001 0.83190500000000001 0
 		 0.32900299999999999 0.94432199999999999 -0.0039617300000000001 0 -0.78632100000000005 0.27162700000000001 -0.55490499999999998 0
 		 43.096375000000002 125.289936 29.504774999999999 1;
 	setAttr ".radi" 0.8050125503540041;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmThumb2" -p "LArmThumb1";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 3.8333930969238281 8.2701447039479132e-007 1.5139579892320368e-005 ;
 	setAttr ".r" -type "double3" 5.805031806230633 -4.734578564763174 -12.54615944623953 ;
 	setAttr ".s" -type "double3" 0.99999993108213137 0.99999991245568365 0.99999998137355217 ;
@@ -10601,11 +10601,11 @@ createNode joint -n "LArmThumb2" -p "LArmThumb1";
 	setAttr ".bps" -type "matrix" -0.568851 -0.0308078 0.82186400000000004 0 0.17535100000000001 0.97177899999999995 0.15779599999999999 0
 		 -0.803531 0.233877 -0.54739400000000005 0 41.091724999999997 126.001749 32.693824999999997 1;
 	setAttr ".radi" 0.90791250228881848;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "LArmThumb3" -p "LArmThumb2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 4.3233971297740537 -2.980231639249152e-007 -5.2452092198506784e-006 ;
 	setAttr ".r" -type "double3" 12.754529356956605 2.6492172628640369 11.596643328666328 ;
 	setAttr ".s" -type "double3" 1.0000001918524597 1.0000001005828418 1 ;
@@ -10614,11 +10614,11 @@ createNode joint -n "LArmThumb3" -p "LArmThumb2";
 		 0.0219074 0.94043200000000005 0.339279 0 -0.81673300000000004 0.21255599999999999 -0.536439 0
 		 38.632340999999997 125.86856899999999 36.246999000000002 1;
 	setAttr ".radi" 0.90791250228881848;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RLegUpper" -p "Pelvis";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" -3.4340896606445313 -0.31900906562805176 -8.6192140579223633 ;
 	setAttr ".r" -type "double3" -163.20961976050907 5.0515177249352163 179.76685929294007 ;
 	setAttr ".s" -type "double3" 1 0.99999994970857897 1.0000000000000002 ;
@@ -10627,11 +10627,11 @@ createNode joint -n "RLegUpper" -p "Pelvis";
 		 -0.28611300000000001 0.026133699999999999 0.95784000000000002 0 -0.95020899999999997 0.121064 -0.28713699999999998 0
 		 -8.6192530000000005 91.164203000000001 1.1594899999999999 1;
 	setAttr ".radi" 8.726486778259277;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RLegCalf" -p "RLegUpper";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 41.554692685603847 2.6077035839566566e-007 2.1606679980745934e-007 ;
 	setAttr ".r" -type "double3" 0.21554579423487644 -1.8826623121572656 -11.870225124229229 ;
 	setAttr ".s" -type "double3" 1.0000001005828418 0.99999993108213148 1 ;
@@ -10640,11 +10640,11 @@ createNode joint -n "RLegCalf" -p "RLegUpper";
 		 -0.30507200000000001 -0.16810700000000001 0.93737400000000004 0 -0.95175200000000004 0.088097800000000004 -0.29395199999999999 0
 		 -13.749741999999999 49.929391000000003 0.75204099999999996 1;
 	setAttr ".radi" 7.8493676376342796;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RLegAnkle" -p "RLegCalf";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 37.377937674522343 2.1792948628473987e-007 4.3213359961491868e-007 ;
 	setAttr ".r" -type "double3" 7.3488172516017203 1.9678747356111201 56.203246504342459 ;
 	setAttr ".s" -type "double3" 1.0000001005828418 1.0000000186264477 0.99999999999999989 ;
@@ -10653,19 +10653,20 @@ createNode joint -n "RLegAnkle" -p "RLegCalf";
 		 -0.24210200000000001 0.72055400000000003 0.64976199999999995 0 -0.93705499999999997 3.8618000000000002e-005 -0.34919099999999997 0
 		 -14.989385 13.230848999999999 -6.2328469999999996 1;
 	setAttr ".radi" 3.3574807834625249;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode joint -n "RLegToe1" -p "RLegAnkle";
 	addAttr -is true -ci true -k true -sn "liw" -ln "liw" -min 0 -max 1 -at "bool";
 	addAttr -ci true -h true -sn "fbxID" -ln "filmboxTypeID" -at "short";
-	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".t" -type "double3" 15.988002926111191 8.9406953796000605e-008 1.3411043569000351e-007 ;
-	setAttr ".r" -type "double3" 0.0023666007060542393 6.9144287109164058 43.900854349013478 ;
+	setAttr ".r" -type "double3" 0.0023666007060542398 6.9144287109164058 43.900854349013478 ;
 	setAttr ".s" -type "double3" 0.99999994039535534 1 1 ;
 	setAttr ".ssc" no;
 	setAttr ".bps" -type "matrix" -0.233845 2.0663199999999999e-007 0.97227399999999997 0
 		 -3.6680199999999999e-008 1 -2.21346e-007 0 -0.97227399999999997 -8.7423899999999997e-008 -0.233845 0
 		 -19.012533000000001 2.1447530000000001 4.5620479999999999 1;
 	setAttr ".radi" 3.3574807834625249;
+	setAttr -k on ".liw";
 	setAttr ".fbxID" 5;
 createNode transform -n "Soldier";
 	setAttr -l on ".tx";
@@ -77800,6 +77801,237 @@ createNode skinCluster -n "skinCluster1";
 	setAttr -s 62 ".lw";
 	setAttr -s 62 ".lw";
 	setAttr ".mi" 5;
+	setAttr ".ptw" -type "doubleArray" 8260 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0012899851150161982 0.46086867270265003
+		 0.15568165249106805 0.3992459953055979 0.039162498696939996 0.063941038668594963
+		 0 0 0 0 0 0 0.49999912083151576 0.50000186264520474 0.54571195082998125 0.52240145206451416
+		 0.72145435405861991 0.81615256351062027 0.058912178175096391 0.052354040511808538
+		 0.13171632784182322 0.13806604260403044 0.23977042377337182 0.13202264413153217 0.2120508676910676
+		 0.4756319962630271 0.49999935925008776 0.46005036055891629 0.49999707937240601 0.44110864400863647
+		 0.50000222027308405 0.36200207471847534 0.49955008922666577 0.19837204213059073 0.44361553918169555
+		 0.010028691021698816 0.0011444878545943638 0.053548826969432431 0.021873952128259117
+		 0 0 0 0 0 0 0 0 0 0 0.0024752227542235456 0 0 0 0.33172884768841143 0.4639055081560482
+		 0.27361891285223316 0.41086848173597867 0.20390677452087402 0.43253062947101995 0.29931950903668453
+		 0.33539248168770419 0.22602928063695044 0.36563998460769653 0.28089151991492362 0.17622564339133404
+		 0.30745402322099386 0.64411763417370216 0.5 0.60631610769975508 0.49756842851638794
+		 0 0 0 0 0 0 0 0 0 0 0 0 0.42489433288574219 0.49876374006271362 0.40031091571780786
+		 0.49478508547588929 0.4719005823135376 0.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0.095839221899532617
+		 0.021805246845152761 0.010184198314422419 0.19096117998330467 0.11795772436324173
+		 0.24205873137887512 0.19095595003146726 0.45982766151428223 0.33629010129839482 0.56649396436304511
+		 0.58356183767318726 0.43021500190760009 0.58964371681213379 0.43569003764715908 0.42877191305160522
+		 0.56784117221832275 0.57124467406406032 0.70702997723132444 0.51144094799282991 0.83012601226943772
+		 0.40509970768989001 0.63187649219768094 0.51562732458114624 0.5 0 0 0.5 0.5 0 0 0.5
+		 0.50136290486565516 0.58024342597256384 0 0.51006065279064616 0.38925548227860085
+		 0.0048960590959629827 0.022776394403684307 0.5 0.5 0 0 0 0 0.11040599603054674 0.04899737801412575
+		 0.5786286168881839 0 0.19293519279553911 0.05528072743268176 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0.066431196523642433 0.33386256793346153 0.33394676944534135 0.30429580354249769
+		 0.26393982768058777 0.073614047897228363 0.13741867039473846 0.2412755602408117 0.31963960288881071
+		 0.2136549106460405 0.17752719833318387 0.49999965727330276 0.67055938465695952 0.58877259492874146
+		 0.77782555028066236 0.73424895429759962 0.14726342988515589 0.09831956796888161 0.50000327825546265
+		 0.02947428844477451 0.49999444186670905 0.44470043645201812 0.30158754284418993 0.51533728837966919
+		 0.64882514927312285 0.063983866512414805 0.14216938482439717 0.028386271314735576
+		 0.066621972125113837 0.32354833711539693 0.1484931912810363 0.098894772657265956
+		 0.58348156760578063 0.63757854700088501 0.77161635118151239 0.8485271938525859 0.84799140533806494
+		 0.65756134219284823 0.087980764746092704 0.075755791004833442 0.77699290765364859
+		 0.63088798522949219 0.75188188624558028 0.72073213635238698 0 0 0 0 0 0.0065665253329734033
+		 0 0 0.016877521018060161 0.0014799006649020316 0.0044777947665658561 0 0 0 0 0 0
+		 0.5 0.41265667714645499 0.48526486031316429 0.43763362057108818 0.57555452396476903
+		 0.52828098917844857 0.51690119504928589 0.47949910163879395 0.24068687083384011 0.089203914496215106
+		 0 0.13372267782688141 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ;
 	setAttr ".ucm" yes;
 createNode groupId -n "groupId1";
 	setAttr ".ihi" 0;
@@ -78405,6 +78637,7 @@ connectAttr "RArmRing2.liw" "skinCluster1.lw[58]";
 connectAttr "RArmRing3.liw" "skinCluster1.lw[59]";
 connectAttr "RArmPinky2.liw" "skinCluster1.lw[60]";
 connectAttr "RArmPinky3.liw" "skinCluster1.lw[61]";
+connectAttr "LArmUpper2.msg" "skinCluster1.ptt";
 connectAttr "SoldierShapeOrig.w" "groupParts1.ig";
 connectAttr "groupId1.id" "groupParts1.gi";
 connectAttr "groupParts1.og" "groupParts2.ig";

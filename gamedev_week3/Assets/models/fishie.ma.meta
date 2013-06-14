@@ -15,6 +15,11 @@ ModelImporter:
     100018: pCube1
     100020: pCube2
     100022: Fish
+    100024: joint10
+    100026: joint6
+    100028: joint7
+    100030: joint8
+    100032: joint9
     400000: FishAnimated
     400002: //RootNode
     400004: ikHandle2
@@ -27,6 +32,11 @@ ModelImporter:
     400018: pCube1
     400020: pCube2
     400022: Fish
+    400024: joint10
+    400026: joint6
+    400028: joint7
+    400030: joint8
+    400032: joint9
     2300000: pCube1
     2300002: pCube2
     2300004: Fish
@@ -40,6 +50,7 @@ ModelImporter:
     9500000: //RootNode
     11100000: //RootNode
     13700000: FishAnimated
+    13700002: Fish
   materials:
     importMaterials: 1
     materialName: 0
