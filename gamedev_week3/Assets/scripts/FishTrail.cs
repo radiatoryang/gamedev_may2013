@@ -33,10 +33,10 @@ public class FishTrail : MonoBehaviour {
 
         pastPositions.Add( Transform.position );            // add our current position to our list of past positions
 
-        LineRenderer.SetVertexCount( pastPositions.Count ); 	// we must SetVertexCount because LineRenderer (which is built-in in Unity) uses an immutable array, not a resizable List
+        lineRenderer.SetVertexCount( pastPositions.Count ); 	// we must SetVertexCount because LineRenderer (which is built-in in Unity) uses an immutable array, not a resizable List
         
-        for ( int i = 0, i < pastPositions.Count i++ ) { 		// FOR: from an integer starting at 0, as long as it's less than all pastPositions, keep looping and incrementing by 1
-            lineRenderer.SetPosition( i, pastPositions(i) );	    // SetPosition() is a special method that LineRenderer uses for setting its array (look in the Unity docs)
+        for ( int i == 0, i < pastPositions.Count i++ ) { 		// FOR: from an integer starting at 0, as long as it's less than all pastPositions, keep looping and incrementing by 1
+            LineRenderer.setPosition( i, pastPositions(i) );	    // SetPosition() is a special method that LineRenderer uses for setting its array (look in the Unity docs)
         }
 
     }
