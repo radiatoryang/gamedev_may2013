@@ -47,6 +47,8 @@ ModelImporter:
     4300002: pCube2
     4300004: FishAnimated
     4300006: Fish
+    7400000: FishIdle
+    7400002: FishSpasm
     9500000: //RootNode
     11100000: //RootNode
     13700000: FishAnimated
@@ -63,7 +65,49 @@ ModelImporter:
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
-    clipAnimations: []
+    clipAnimations:
+    - name: FishIdle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: FishSpasm
+      takeName: Take 001
+      firstFrame: 49
+      lastFrame: 100
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
